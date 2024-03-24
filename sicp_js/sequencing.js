@@ -48,6 +48,16 @@ function is_null(one){
         false;
 }
 
+/ To append an element to the end of a list
+function append(list, element) {
+    if (is_null(list)) {
+        return pair(element, null);
+    } else {
+        return pair(head(list), append(tail(list), element));
+    }
+}
+
+
 // to count the size of list
 function count_list(one){
     return is_null(one) ?
